@@ -1,6 +1,18 @@
+import type { MouseEventHandler } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
-const CarouselControl = ({ type, title, handleClick, disabled }) => {
+interface CarouselControlProps {
+  type: "previous" | "next";
+  title: string;
+  handleClick: MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
+}
+const CarouselControl: React.FC<CarouselControlProps> = ({
+  type,
+  title,
+  handleClick,
+  disabled = false,
+}) => {
   return (
     <button
       className={`w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${

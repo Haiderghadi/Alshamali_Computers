@@ -1,8 +1,19 @@
 import { useState, useEffect, useId } from "react";
 import CarouselControl from "./CarouselControl";
 import Heading from "./Heading";
+interface Product {
+  id: string;
+  name: string;
+  image: string;
+  price?: string;
+}
 
-const SimpleGrid = ({
+interface SimpleGridProps {
+  products: Product[];
+  catergoryGrid?: boolean;
+  productGrid?: boolean;
+}
+const SimpleGrid: React.FC<SimpleGridProps> = ({
   products,
   catergoryGrid = false,
   productGrid = false,
@@ -134,7 +145,7 @@ const SimpleGrid = ({
                 transform: `translateX(-${current * (100 / itemsPerView)}%)`,
               }}
             >
-              {products.map((product, index) => (
+              {products.map((product) => (
                 <div
                   key={product.id}
                   className="flex-shrink-0 px-1 sm:px-2 md:px-3"
