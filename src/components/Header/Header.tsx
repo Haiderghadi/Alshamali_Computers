@@ -1,24 +1,3 @@
-// import "../../styles/Navbar.css";
-// import Topbar from "./Topbar";
-// import Icons from "./Icons";
-// import Links from "./Links";
-// const Header = () => {
-//   return (
-//     <div className="flex flex-col">
-//       <Topbar />
-//       <header className="bg-white shadow flex flex-row justify-between items-center px-4 py-4">
-//         <div className="">
-//           <img src="./shamali_logo.png" alt="logo" width={150} height={150} />
-//         </div>
-//         <Links />
-//         <Icons />
-//       </header>
-//     </div>
-//   );
-// };
-
-// export default Header;
-
 import { useState } from "react";
 import {
   MobileNav,
@@ -31,7 +10,6 @@ import {
   NavBody,
   NavItems,
 } from "../reusables/resizable-navbar";
-import Topbar from "./Topbar";
 
 export function Header() {
   const navItems = [

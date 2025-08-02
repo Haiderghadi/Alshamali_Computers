@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -54,7 +54,6 @@ const ContactUs = () => {
             placeholder="Your Message"
             value={formData.message}
             onChange={handleChange}
-            rows="5"
             className="w-full border border-neutral-300 bg-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
             required
           />
