@@ -5,7 +5,7 @@ interface Product {
   id: number;
   name: string;
   image: string;
-  price?: string; // Optional for categories
+  price?: string;
 }
 
 interface SimpleGridProps {
