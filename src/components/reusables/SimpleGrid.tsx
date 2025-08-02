@@ -2,10 +2,10 @@ import { useState, useEffect, useId } from "react";
 import CarouselControl from "./CarouselControl";
 import Heading from "./Heading";
 interface Product {
-  id: string;
+  id: number;
   name: string;
   image: string;
-  price?: string;
+  price?: string; // Optional for categories
 }
 
 interface SimpleGridProps {
