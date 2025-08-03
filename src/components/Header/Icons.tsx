@@ -1,4 +1,4 @@
-import { MdPerson, MdSearch, MdShoppingCart } from "react-icons/md";
+import { MdSearch, MdShoppingCart } from "react-icons/md";
 
 const Icons = () => {
   return (

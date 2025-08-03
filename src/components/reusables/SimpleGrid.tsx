@@ -25,8 +25,6 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [dragOffset, setDragOffset] = useState(0);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [startCurrent, setStartCurrent] = useState(0);
 
   const containerRef = useRef<HTMLDivElement>(null);
 
