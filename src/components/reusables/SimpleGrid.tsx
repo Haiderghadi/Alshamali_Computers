@@ -83,15 +83,11 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
   };
 
   // Drag functionality
-  const handleDragStart = useCallback(
-    (clientX: number, clientY: number) => {
-      setIsDragging(true);
-      setDragStart({ x: clientX, y: clientY });
-      setStartCurrent(current);
-      setDragOffset(0);
-    },
-    [current]
-  );
+  const handleDragStart = useCallback((clientX: number, clientY: number) => {
+    setIsDragging(true);
+    setDragStart({ x: clientX, y: clientY });
+    setDragOffset(0);
+  }, []);
 
   const handleDragMove = useCallback(
     (clientX: number) => {
