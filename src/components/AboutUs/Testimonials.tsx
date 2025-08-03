@@ -14,7 +14,7 @@ export function Testimonials() {
           alt="arrow"
         />
         <div className="order-1 lg:order-1 flex flex-col items-center justify-center relative mt-4 sm:mt-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-7xl lg:text-center sm:text-left sm:pl-4 md:pl-8 lg:pl-10 xl:pl-12 z-10 font-bold text-gray-800 mb-0 sm:mb-6 px-4 sm:px-0 lg:leading-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl lg:text-center sm:text-left sm:pl-4 md:pl-8 lg:pl-10 xl:pl-12 z-10 font-bold text-gray-800 mb-0 sm:mb-6 px-4 sm:px-0 lg:leading-20">
             What Our Clients Say !
           </h2>
           <div className="absolute z-0 inset-0 bg-gradient-to-r from-emerald-100 to-emerald-200 rounded-full blur-sm sm:blur-md lg:blur-lg opacity-20 scale-75 sm:scale-90 lg:scale-100"></div>
