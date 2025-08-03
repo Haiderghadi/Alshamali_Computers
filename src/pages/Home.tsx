@@ -4,11 +4,13 @@ import FeaturedCategories from "../components/Featured/FeaturedCategories";
 import FeaturedItems from "../components/Featured/FeaturedItems";
 import Partners from "../components/Featured/Partners";
 import Hero from "../components/Hero/Hero";
+import StatsSection from "../components/reusables/StatsNumber";
 
 const Home = () => {
   return (
     <>
       <Hero />
+      <StatsSection />
       <FeaturedCategories />
       <FeaturedItems />
       <Partners />

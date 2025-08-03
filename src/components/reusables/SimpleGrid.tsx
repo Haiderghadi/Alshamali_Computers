@@ -1,6 +1,7 @@
-import { useState, useEffect, useId } from "react";
+import { useState, useEffect, useId, useRef, useCallback } from "react";
 import CarouselControl from "./CarouselControl";
 import Heading from "./Heading";
+
 interface Product {
   id: number;
   name: string;
@@ -13,6 +14,7 @@ interface SimpleGridProps {
   catergoryGrid?: boolean;
   productGrid?: boolean;
 }
+
 const SimpleGrid: React.FC<SimpleGridProps> = ({
   products,
   catergoryGrid = false,
@@ -20,6 +22,13 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
 }) => {
   const [current, setCurrent] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [dragOffset, setDragOffset] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [startCurrent, setStartCurrent] = useState(0);
+
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Responsive items per view
   const [itemsPerView, setItemsPerView] = useState(4);
@@ -45,16 +54,16 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Auto-play functionality
+  // Auto-play functionality (disabled when dragging)
   useEffect(() => {
-    if (isHovered) return;
+    if (isHovered || isDragging) return;
 
     const interval = setInterval(() => {
       setCurrent((prev) => (prev >= maxSlide ? 0 : prev + 1));
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [maxSlide, isHovered]);
+  }, [maxSlide, isHovered, isDragging]);
 
   // Reset current when itemsPerView changes
   useEffect(() => {
@@ -75,10 +84,113 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
     setCurrent((prev) => (prev >= maxSlide ? 0 : prev + 1));
   };
 
+  // Drag functionality
+  const handleDragStart = useCallback(
+    (clientX: number, clientY: number) => {
+      setIsDragging(true);
+      setDragStart({ x: clientX, y: clientY });
+      setStartCurrent(current);
+      setDragOffset(0);
+    },
+    [current]
+  );
+
+  const handleDragMove = useCallback(
+    (clientX: number) => {
+      if (!isDragging || !containerRef.current) return;
+
+      const containerWidth = containerRef.current.offsetWidth;
+      const deltaX = clientX - dragStart.x;
+      const slideWidth = containerWidth / itemsPerView;
+      const offset = deltaX / slideWidth;
+
+      setDragOffset(offset);
+    },
+    [isDragging, dragStart.x, itemsPerView]
+  );
+
+  const handleDragEnd = useCallback(() => {
+    if (!isDragging) return;
+
+    setIsDragging(false);
+
+    // Determine if we should slide to next/previous based on drag distance
+    const threshold = 0.3; // 30% of slide width
+
+    if (Math.abs(dragOffset) > threshold) {
+      if (dragOffset > 0 && current > 0) {
+        // Dragged right, go to previous
+        setCurrent(current - 1);
+      } else if (dragOffset < 0 && current < maxSlide) {
+        // Dragged left, go to next
+        setCurrent(current + 1);
+      }
+    }
+
+    setDragOffset(0);
+  }, [isDragging, dragOffset, current, maxSlide]);
+
+  // Mouse events
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleDragStart(e.clientX, e.clientY);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    handleDragMove(e.clientX);
+  };
+
+  const handleMouseUp = () => {
+    handleDragEnd();
+  };
+
+  // Touch events
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    handleDragStart(touch.clientX, touch.clientY);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    handleDragMove(touch.clientX);
+  };
+
+  const handleTouchEnd = () => {
+    handleDragEnd();
+  };
+
+  // Global mouse events for dragging outside container
+  useEffect(() => {
+    if (!isDragging) return;
+
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      handleDragMove(e.clientX);
+    };
+
+    const handleGlobalMouseUp = () => {
+      handleDragEnd();
+    };
+
+    document.addEventListener("mousemove", handleGlobalMouseMove);
+    document.addEventListener("mouseup", handleGlobalMouseUp);
+
+    return () => {
+      document.removeEventListener("mousemove", handleGlobalMouseMove);
+      document.removeEventListener("mouseup", handleGlobalMouseUp);
+    };
+  }, [isDragging, handleDragMove, handleDragEnd]);
+
   const id = useId();
 
+  // Calculate transform with drag offset
+  const getTransform = () => {
+    const baseTransform = current * (100 / itemsPerView);
+    const dragTransform = isDragging ? dragOffset * (100 / itemsPerView) : 0;
+    return baseTransform - dragTransform;
+  };
+
   return (
-    <div className=" bg-neutral-200 p-4 sm:p-6 md:p-8">
+    <div className="bg-neutral-200 p-4 sm:p-6 md:p-8">
       <div className="max-w-8xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 sm:mb-8 gap-4 lg:gap-0">
           {/* Header */}
@@ -132,6 +244,7 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
         </div>
 
         <div
+          ref={containerRef}
           className="relative"
           aria-labelledby={`carousel-heading-${id}`}
           onMouseEnter={handleMouseEnter}
@@ -140,10 +253,19 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
           {/* Products Grid */}
           <div className="overflow-hidden">
             <div
-              className="flex transition-transform duration-700 ease-out"
+              className={`flex transition-transform duration-700 ease-out  ${
+                isDragging ? "duration-0" : ""
+              }`}
               style={{
-                transform: `translateX(-${current * (100 / itemsPerView)}%)`,
+                transform: `translateX(-${getTransform()}%)`,
               }}
+              onMouseDown={handleMouseDown}
+              onMouseMove={isDragging ? handleMouseMove : undefined}
+              onMouseUp={handleMouseUp}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              draggable={false}
             >
               {products.map((product) => (
                 <div
@@ -157,7 +279,8 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-fit transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-fit transition-transform duration-500 group-hover:scale-110 select-none"
+                        draggable={false}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
@@ -165,18 +288,18 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
                     {/* Product Info */}
                     {catergoryGrid ? (
                       <div className="p-3 sm:p-4 md:p-6">
-                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors duration-300 line-clamp-2">
+                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors duration-300 line-clamp-2 select-none">
                           {product.name}
                         </h3>
                       </div>
                     ) : null}
                     {productGrid ? (
                       <div className="p-3 sm:p-4 md:p-6">
-                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors duration-300 line-clamp-2">
+                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors duration-300 line-clamp-2 select-none">
                           {product.name}
                         </h3>
                         <div className="flex items-center justify-between">
-                          <span className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                          <span className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 select-none">
                             {product.price}
                           </span>
                         </div>

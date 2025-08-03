@@ -3,18 +3,18 @@ import { CardStack } from "../reusables/CardStack";
 
 export function Testimonials() {
   return (
-    <div className="flex flex-col md:flex-row lg:flex-col justify-start items-start mt-4 sm:mt-6 px-4 sm:px-6 lg:px-8">
-      <div className="w-full flex justify-center items-center max-w-4xl order-2 lg:order-1">
+    <div className="flex flex-col md:flex-row lg:flex-row justify-cneter items-center mt-4 sm:mt-6 px-4 sm:px-6 lg:px-8">
+      <div className="w-full flex justify-center items-center max-w-4xl order-2 lg:order-2">
         <CardStack items={CARDS} />
       </div>
-      <div className="order-1 lg:order-2 flex flex-col items-center justify-center mt-6 sm:mt-8 mb-4 w-full max-w-4xl">
+      <div className="order-1 lg:order-1 flex flex-col lg:flex-row items-center justify-between gap-4 mt-6 sm:mt-8 mb-4 w-full max-w-4xl">
         <img
-          className="order-2 lg:order-1 w-15 h-15 sm:w-15 sm:h-15 md:w-20 md:h-20 lg:w-30 lg:h-30"
+          className="order-2 lg:order-2 w-15 h-15 sm:w-15 rotate-[45deg] lg:rotate-[120deg] sm:h-15 md:w-20 md:h-20 lg:w-40 lg:h-40"
           src="./arrow6.svg"
           alt="arrow"
         />
-        <div className="order-1 lg:order-2 flex flex-col items-center justify-center relative mt-2 sm:mt-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-7xl text-center sm:text-left sm:pl-4 md:pl-8 lg:pl-12 xl:pl-16 z-10 font-bold text-gray-800 mb-4 sm:mb-6 px-4 sm:px-0 leading-tight">
+        <div className="order-1 lg:order-1 flex flex-col items-center justify-center relative mt-4 sm:mt-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-7xl lg:text-center sm:text-left sm:pl-4 md:pl-8 lg:pl-10 xl:pl-12 z-10 font-bold text-gray-800 mb-0 sm:mb-6 px-4 sm:px-0 lg:leading-20">
             What Our Clients Say !
           </h2>
           <div className="absolute z-0 inset-0 bg-gradient-to-r from-emerald-100 to-emerald-200 rounded-full blur-sm sm:blur-md lg:blur-lg opacity-20 scale-75 sm:scale-90 lg:scale-100"></div>

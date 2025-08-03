@@ -10,20 +10,13 @@ import {
   NavBody,
   NavItems,
 } from "../reusables/resizable-navbar";
+import Icons from "./Icons";
 
 export function Header() {
   const navItems = [
     {
-      name: "Home",
-      link: "#home",
-    },
-    {
       name: "Shop",
       link: "#shop",
-    },
-    {
-      name: "Software Solutions",
-      link: "#solutions",
     },
     {
       name: "Services",
@@ -54,6 +47,7 @@ export function Header() {
             <NavbarLogo />
             <NavItems items={navItems} />
             <div className="flex items-center gap-4">
+              <Icons />
               <NavbarButton variant="primary">Login</NavbarButton>
             </div>
           </NavBody>
@@ -82,7 +76,8 @@ export function Header() {
                   <span className="block">{item.name}</span>
                 </a>
               ))}
-              <div className="flex w-full flex-col gap-4">
+              <div className="flex w-full flex-col justify-center items-center gap-4">
+                <Icons />
                 <NavbarButton
                   onClick={() => setIsMobileMenuOpen(false)}
                   variant="primary"
