@@ -68,9 +68,6 @@ const Partners = () => {
       partnership: "Silver Partner",
     },
   ];
-
-  const categories = ["All", "Hardware", "Software", "Security", "Electronics"];
-
   return (
     <div className="bg-neutral-200 min-h-screen pt-2 lg:pt-20">
       <Container>
