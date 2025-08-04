@@ -30,7 +30,7 @@ const words = ["Business", "Office", "Project", "Workspace"];
 // Hero Component using the Carousel
 const Hero = () => {
   return (
-    <div className=" bg-neutral-200 pb-16 flex flex-col lg:flex-row">
+    <div className=" bg-neutral-200 pb-16 flex flex-col lg:flex-row max-w-[1440px] mx-auto">
       {/* Left Side - Hero Content */}
       <div className="flex-1 flex items-center justify-start px-4 sm:px-6 md:px-8 lg:px-8 py-8 lg:py-0 order-1 lg:order-1">
         <div className="text-gray-900 w-full max-w-none lg:max-w-2xl">

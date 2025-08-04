@@ -8,35 +8,37 @@ import {
   NavbarButton,
   NavbarLogo,
   NavBody,
-  NavItems,
 } from "../reusables/resizable-navbar";
 import Icons from "./Icons";
+import CustomNavItems from "./CustomNavItems";
+import MobileMegaMenu from "./MobileMegaMenu";
 
 export function Header() {
   const navItems = [
     {
       name: "Shop",
-      link: "#shop",
+      link: "",
     },
     {
       name: "Services",
-      link: "#services",
+      link: "/services",
     },
     {
       name: "Partners",
-      link: "#partners",
+      link: "/partners",
     },
     {
       name: "About Us",
-      link: "#about",
+      link: "/about",
     },
     {
       name: "Contact",
-      link: "#contact",
+      link: "/contact",
     },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileShopMenuOpen, setIsMobileShopMenuOpen] = useState(false);
 
   return (
     <>
@@ -45,7 +47,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <NavBody>
             <NavbarLogo />
-            <NavItems items={navItems} />
+            <CustomNavItems items={navItems} />
             <div className="flex items-center gap-4">
               <Icons />
               <NavbarButton variant="primary">Login</NavbarButton>
@@ -66,16 +68,49 @@ export function Header() {
               isOpen={isMobileMenuOpen}
               onClose={() => setIsMobileMenuOpen(false)}
             >
+              {/* Mobile MegaMenu */}
+              <MobileMegaMenu
+                isOpen={isMobileShopMenuOpen}
+                onClose={() => setIsMobileShopMenuOpen(false)}
+              />
               {navItems.map((item, idx) => (
-                <a
-                  key={`mobile-link-${idx}`}
-                  href={item.link}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="relative text-neutral-600 dark:text-neutral-300"
-                >
-                  <span className="block">{item.name}</span>
-                </a>
+                <div key={`mobile-link-${idx}`}>
+                  {item.name === "Shop" ? (
+                    <button
+                      onClick={() =>
+                        setIsMobileShopMenuOpen(!isMobileShopMenuOpen)
+                      }
+                      className="w-full flex items-center justify-between p-3 text-neutral-600 dark:text-neutral-300 hover:bg-gray-50 rounded-lg"
+                    >
+                      <span className="block">{item.name}</span>
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          isMobileShopMenuOpen ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                  ) : (
+                    <a
+                      href={item.link}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block p-3 text-neutral-600 dark:text-neutral-300 hover:bg-gray-50 rounded-lg"
+                    >
+                      <span className="block">{item.name}</span>
+                    </a>
+                  )}
+                </div>
               ))}
+
               <div className="flex w-full flex-col justify-center items-center gap-4">
                 <Icons />
                 <NavbarButton

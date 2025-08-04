@@ -81,7 +81,7 @@ const products = [
 
 const FeaturedCategories = () => {
   return (
-    <div className=" bg-neutral-200 p-8">
+    <div className=" bg-neutral-200 p-8 max-w-[1440px] mx-auto">
       <SimpleGrid products={products} catergoryGrid />
     </div>
   );

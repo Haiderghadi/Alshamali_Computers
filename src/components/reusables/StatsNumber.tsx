@@ -1,36 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-
-const AnimatedNumber = ({
-  target,
-  duration = 2000,
-  suffix = "",
-  shouldStart = false,
-}: {
-  target: number;
-  duration?: number;
-  suffix?: string;
-  shouldStart?: boolean;
-}) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!shouldStart) return;
-
-    const startTime = performance.now();
-
-    const step = (currentTime: number) => {
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      const value = Math.floor(progress * target);
-      setCount(value);
-      if (progress < 1) requestAnimationFrame(step);
-    };
-
-    requestAnimationFrame(step);
-  }, [target, duration, shouldStart]);
-
-  const formatted = count.toLocaleString() + suffix;
-  return <>{formatted}</>;
-};
+import AnimatedNumber from "./AnimatedNumber";
 
 const StatsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -88,6 +57,7 @@ const StatsSection = () => {
                   target={stat.number}
                   suffix={stat.suffix}
                   shouldStart={isVisible}
+                  className="text-3xl font-bold text-gray-900"
                 />
               </h3>
               <p className="text-gray-600 text-sm font-semibold tracking-wider uppercase">
