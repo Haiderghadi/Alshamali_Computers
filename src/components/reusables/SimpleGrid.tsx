@@ -58,7 +58,7 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
 
     const interval = setInterval(() => {
       setCurrent((prev) => (prev >= maxSlide ? 0 : prev + 1));
-    }, 4000);
+    }, 100000);
 
     return () => clearInterval(interval);
   }, [maxSlide, isHovered, isDragging]);
@@ -273,27 +273,27 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-contain transition-transform duration-500 group-hover:scale-110 select-none"
+                        className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-contain transition-transform duration-500 group-hover:scale-[101.5%] select-none"
                         draggable={false}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
 
                     {/* Product Info */}
                     {catergoryGrid ? (
-                      <div className="p-3 sm:p-4 md:p-6">
+                      <div className="py-3 sm:py-4 md:py-4">
                         <h3 className="text-base sm:text-lg md:text-xl font-semibold text-description mb-2 group-hover:text-heading transition-colors duration-300 line-clamp-2 select-none">
                           {product.name}
                         </h3>
                       </div>
                     ) : null}
                     {productGrid ? (
-                      <div className="p-3 sm:p-4 md:p-6">
-                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-description mb-2 group-hover:text-heading transition-colors duration-300 line-clamp-2 select-none">
+                      <div className="py-3 sm:py-4 md:py-2">
+                        <h3 className="text-base sm:text-sm md:text-md font-normal text-description mb-2 group-hover:text-heading transition-colors duration-300 line-clamp-2 select-none">
                           {product.name}
                         </h3>
                         <div className="flex items-center justify-between">
-                          <span className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 select-none">
+                          <span className="text-md sm:text-lg md:text-xl font-bold text-gray-800 select-none">
                             {product.price}
                           </span>
                         </div>
