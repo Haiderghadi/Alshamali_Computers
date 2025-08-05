@@ -189,8 +189,8 @@ const AboutUs = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <FaChartLine className="text-blue-600 text-xl" />
+              <div className="w-12 h-12 bg-light-grey rounded-lg flex items-center justify-center flex-shrink-0">
+                <FaChartLine className="text-heading text-xl" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-heading mb-2">
@@ -203,8 +203,8 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <FaGlobe className="text-green-600 text-xl" />
+              <div className="w-12 h-12 bg-light-grey rounded-lg flex items-center justify-center flex-shrink-0">
+                <FaGlobe className="text-heading text-xl" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-heading mb-2">
@@ -217,8 +217,8 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <FaUsers className="text-purple-600 text-xl" />
+              <div className="w-12 h-12 bg-light-grey rounded-lg flex items-center justify-center flex-shrink-0">
+                <FaUsers className="text-heading text-xl" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-heading mb-2">
@@ -231,8 +231,8 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <FaAward className="text-orange-600 text-xl" />
+              <div className="w-12 h-12 bg-light-grey rounded-lg flex items-center justify-center flex-shrink-0">
+                <FaAward className="text-heading text-xl" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-heading mb-2">

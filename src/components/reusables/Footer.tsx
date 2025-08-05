@@ -34,10 +34,11 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl font-bold">Important Links</h1>
           <div className="flex flex-col gap-2 text-lightDescription">
-            <a href="">Shop</a>
-            <a href="">Services</a>
-            <a href="">Privacy Policy</a>
-            <a href="">Terms & Conditions</a>
+            <a href="/shop">Shop</a>
+            <a href="/services">Services</a>
+            <a href="/partners">Partners</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact</a>
           </div>
         </div>
         <div className="flex flex-col gap-4">

@@ -1,26 +1,31 @@
-import { FaAward, FaHandshake, FaLightbulb, FaUsers } from "react-icons/fa6";
+import { FaShieldAlt, FaRocket, FaBullseye, FaStar } from "react-icons/fa";
+// Alternative option 1: More corporate feel
+// import { FaBuilding, FaCogs, FaUserTie, FaTrophy } from "react-icons/fa";
+
+// Alternative option 2: Modern business icons
+// import { FaCheckCircle, FaChartLine, FaUserFriends, FaMedal } from "react-icons/fa";
 
 export const values = [
   {
-    icon: <FaHandshake className="text-4xl text-blue-600" />,
+    icon: <FaShieldAlt className="text-4xl text-heading" />,
     title: "Trust & Reliability",
     description:
       "Building lasting relationships through honest, transparent, and reliable service delivery.",
   },
   {
-    icon: <FaLightbulb className="text-4xl text-green-600" />,
+    icon: <FaRocket className="text-4xl text-heading" />,
     title: "Innovation",
     description:
       "Embracing cutting-edge technology to provide forward-thinking solutions for our clients.",
   },
   {
-    icon: <FaUsers className="text-4xl text-purple-600" />,
+    icon: <FaBullseye className="text-4xl text-heading" />,
     title: "Customer Focus",
     description:
       "Putting our customers first with personalized solutions and exceptional support.",
   },
   {
-    icon: <FaAward className="text-4xl text-orange-600" />,
+    icon: <FaStar className="text-4xl text-heading" />,
     title: "Excellence",
     description:
       "Maintaining the highest standards of quality in every product and service we offer.",
