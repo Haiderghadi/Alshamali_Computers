@@ -79,7 +79,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="bg-neutral-200 min-h-screen pt-2 lg:pt-10">
+    <div className="bg-background min-h-screen pt-2 lg:pt-10">
       <Container>
         <Heading
           title="Contact"
@@ -94,7 +94,7 @@ const Contact = () => {
               className="bg-white rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-6 text-center hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex justify-center mb-4">{info.icon}</div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-heading mb-2">
                 {info.title}
               </h3>
               <a
@@ -109,17 +109,15 @@ const Contact = () => {
 
         {/* Branches */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Our Branches
-          </h2>
+          <h2 className="text-2xl font-bold text-heading mb-6">Our Branches</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {branches.map((branch, index) => (
               <div
                 key={index}
                 className="bg-white rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-6"
               >
-                <h3 className="text-gray-600">{branch.name}</h3>
-                <p className=" text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lightDescription">{branch.name}</h3>
+                <p className=" text-lg font-semibold text-heading mb-2">
                   {branch.address}
                 </p>
               </div>
@@ -129,13 +127,13 @@ const Contact = () => {
 
         {/* Business Hours */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl font-bold text-heading mb-6">
             Customer Support Hours
           </h2>
           <div className="bg-white rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-6">
             <div className="flex items-center mb-4">
               <FaClock className="text-2xl text-orange-600 mr-3" />
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-heading">
                 Operating Hours
               </h3>
             </div>
@@ -145,10 +143,12 @@ const Contact = () => {
                   key={index}
                   className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0"
                 >
-                  <span className="font-medium text-gray-900">
+                  <span className="font-medium text-heading">
                     {schedule.day}
                   </span>
-                  <span className="text-gray-600">{schedule.hours}</span>
+                  <span className="text-lightDescription">
+                    {schedule.hours}
+                  </span>
                 </div>
               ))}
             </div>
@@ -160,11 +160,11 @@ const Contact = () => {
           <div className="bg-white rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-8">
             <div className="flex items-center mb-6">
               <FaComments className="text-2xl text-blue-600 mr-3" />
-              <h2 className="text-2xl font-bold text-gray-900">
+              <h2 className="text-2xl font-bold text-heading">
                 Send us a Message
               </h2>
             </div>
-            <p className="text-gray-600 mb-6">
+            <p className="text-lightDescription mb-6">
               You can also fill out the contact form below, and one of our
               representatives will get back to you as soon as possible.
             </p>
@@ -172,7 +172,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-description mb-2">
                     Name
                   </label>
                   <div className="relative">
@@ -189,7 +189,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-description mb-2">
                     Email
                   </label>
                   <div className="relative">
@@ -208,7 +208,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-description mb-2">
                   Phone Number
                 </label>
                 <div className="relative">
@@ -226,7 +226,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-description mb-2">
                   Comment
                 </label>
                 <textarea
@@ -252,10 +252,10 @@ const Contact = () => {
 
         {/* Additional Information */}
         <div className="bg-blue-50 rounded-xl p-8">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">
+          <h3 className="text-xl font-bold text-heading mb-4">
             Need Immediate Assistance?
           </h3>
-          <p className="text-gray-600 mb-4">
+          <p className="text-lightDescription mb-4">
             For urgent technical support or immediate assistance, please call us
             directly at{" "}
             <a
@@ -267,7 +267,7 @@ const Contact = () => {
             . Our support team is available during business hours to help you
             with any technical issues or questions.
           </p>
-          <p className="text-gray-600">
+          <p className="text-lightDescription">
             For general inquiries or to schedule a consultation, you can also
             email us at{" "}
             <a

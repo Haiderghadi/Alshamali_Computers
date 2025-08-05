@@ -8,7 +8,7 @@ const Footer = () => {
         backgroundSize: "8px 8px",
         backgroundRepeat: "repeat",
       }}
-      className=" bg-neutral-300 w-full text-gray-900 px-5 pt-24 lg:px-0"
+      className=" bg-neutral-300 w-full text-heading px-5 pt-24 lg:px-0"
     >
       <div className="flex flex-col gap-5 sm:flex-wrap sm:flex-row lg:px-10 sm:justify-between px-5">
         <div className="flex flex-col gap-4">
@@ -19,7 +19,7 @@ const Footer = () => {
             className=""
             alt="logo"
           ></img>
-          <div className="text-gray-600 flex flex-col gap-2">
+          <div className="text-lightDescription flex flex-col gap-2">
             <p>
               Delivering top-notch customer service is our priority. With
               <br />
@@ -33,7 +33,7 @@ const Footer = () => {
 
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl font-bold">Important Links</h1>
-          <div className="flex flex-col gap-2 text-gray-600">
+          <div className="flex flex-col gap-2 text-lightDescription">
             <a href="">Shop</a>
             <a href="">Services</a>
             <a href="">Privacy Policy</a>
@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl font-bold">Al Shamali Computers</h1>
-          <div className="text-gray-600 flex flex-col gap-2">
+          <div className="text-lightDescription flex flex-col gap-2">
             <p>
               Head Office - Wara Building, Jaber Al Mubarak
               <br /> Street, Sharq, Kuwait
@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-gray-600 text-sm border-t border-gray-300 px-5 mt-10 flex flex-col gap-2 py-5 justify-center items-center sm:flex-row sm:justify-between">
+      <div className="text-lightDescription text-sm border-t border-gray-300 px-5 mt-10 flex flex-col gap-2 py-5 justify-center items-center sm:flex-row sm:justify-between">
         <p>© 2025, Al Shamali Computers</p>
         <p>
           Privacy policy |Terms of service | Contact information | Refund policy

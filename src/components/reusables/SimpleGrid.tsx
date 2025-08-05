@@ -184,7 +184,7 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
   };
 
   return (
-    <div className="bg-neutral-200 p-4 sm:p-6 md:p-8">
+    <div className="bg-background p-4 sm:p-6 md:p-8">
       <div className="max-w-8xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 sm:mb-8 gap-4 lg:gap-0">
           {/* Header */}
@@ -273,7 +273,7 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-fit transition-transform duration-500 group-hover:scale-110 select-none"
+                        className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-contain transition-transform duration-500 group-hover:scale-110 select-none"
                         draggable={false}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -282,14 +282,14 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
                     {/* Product Info */}
                     {catergoryGrid ? (
                       <div className="p-3 sm:p-4 md:p-6">
-                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors duration-300 line-clamp-2 select-none">
+                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-description mb-2 group-hover:text-heading transition-colors duration-300 line-clamp-2 select-none">
                           {product.name}
                         </h3>
                       </div>
                     ) : null}
                     {productGrid ? (
                       <div className="p-3 sm:p-4 md:p-6">
-                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors duration-300 line-clamp-2 select-none">
+                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-description mb-2 group-hover:text-heading transition-colors duration-300 line-clamp-2 select-none">
                           {product.name}
                         </h3>
                         <div className="flex items-center justify-between">

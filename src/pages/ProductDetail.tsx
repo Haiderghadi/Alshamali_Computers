@@ -45,10 +45,10 @@ const ProductDetail = () => {
     return (
       <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
         <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl font-bold text-heading mb-4">
             Product Not Found
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-lightDescription mb-6">
             The product you're looking for doesn't exist.
           </p>
           <button
@@ -78,18 +78,18 @@ const ProductDetail = () => {
           {/* Product Info */}
           <div className="space-y-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              <h1 className="text-3xl font-bold text-heading mb-2">
                 {product.name}
               </h1>
               <p className="text-2xl font-bold text-blue-600 mb-4">
                 {product.price}
               </p>
-              <p className="text-gray-600">{product.description}</p>
+              <p className="text-lightDescription">{product.description}</p>
             </div>
 
             {/* Specifications */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-heading mb-3">
                 Specifications
               </h3>
               <div className="space-y-2">
@@ -98,10 +98,10 @@ const ProductDetail = () => {
                     key={key}
                     className="flex justify-between py-2 border-b border-gray-200"
                   >
-                    <span className="text-gray-600 capitalize">
+                    <span className="text-lightDescription capitalize">
                       {key.replace(/([A-Z])/g, " $1").trim()}:
                     </span>
-                    <span className="text-gray-900 font-medium">{value}</span>
+                    <span className="text-heading font-medium">{value}</span>
                   </div>
                 ))}
               </div>
@@ -112,7 +112,7 @@ const ProductDetail = () => {
               <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
                 Add to Cart
               </button>
-              <button className="flex-1 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors font-medium">
+              <button className="flex-1 bg-gray-100 text-description px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors font-medium">
                 Add to Wishlist
               </button>
             </div>
@@ -127,7 +127,7 @@ const ProductDetail = () => {
               </button>
               <button
                 onClick={() => navigate("/shop")}
-                className="flex-1 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                className="flex-1 bg-gray-100 text-description px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
               >
                 View All Products
               </button>

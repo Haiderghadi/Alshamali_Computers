@@ -209,14 +209,14 @@ export const MobileMegaMenu = ({ isOpen, onClose }: MobileMegaMenuProps) => {
           <div className="p-4">
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-heading">
                 {view === "categories"
                   ? "Categories"
                   : categories.find((c) => c.id === selectedCategory)?.name}
               </h3>
               <button
                 onClick={handleClose}
-                className="p-2 text-gray-400 hover:text-gray-600"
+                className="p-2 text-gray-400 hover:text-lightDescription"
               >
                 <svg
                   className="w-5 h-5"
@@ -278,7 +278,7 @@ export const MobileMegaMenu = ({ isOpen, onClose }: MobileMegaMenuProps) => {
                         alt={category.name}
                         className="w-10 h-10 rounded object-cover"
                       />
-                      <span className="text-sm font-medium text-gray-700">
+                      <span className="text-sm font-medium text-description">
                         {category.name}
                       </span>
                       <svg
@@ -320,7 +320,7 @@ export const MobileMegaMenu = ({ isOpen, onClose }: MobileMegaMenuProps) => {
                           className="w-12 h-12 rounded object-cover"
                         />
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-sm font-medium text-gray-900 truncate">
+                          <h4 className="text-sm font-medium text-heading truncate">
                             {product.name}
                           </h4>
                           <p className="text-xs text-gray-500 truncate">

@@ -1,27 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import AnimatedNumber from "./AnimatedNumber";
+import { stats } from "../../constants";
 
 const StatsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-
-  const stats = [
-    {
-      number: 25,
-      suffix: "+",
-      label: "premium partners",
-    },
-    {
-      number: 900,
-      suffix: "+",
-      label: "projects completed",
-    },
-    {
-      number: 1500,
-      suffix: "+",
-      label: "satisfied customers",
-    },
-  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,15 +35,15 @@ const StatsSection = () => {
               key={index}
               className="bg-white shadow-sm rounded-lg p-6 text-center border border-neutral-200"
             >
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              <h3 className="text-3xl font-bold text-heading mb-2">
                 <AnimatedNumber
                   target={stat.number}
                   suffix={stat.suffix}
                   shouldStart={isVisible}
-                  className="text-3xl font-bold text-gray-900"
+                  className="text-3xl font-bold text-heading"
                 />
               </h3>
-              <p className="text-gray-600 text-sm font-semibold tracking-wider uppercase">
+              <p className="text-lightDescription text-sm font-semibold tracking-wider uppercase">
                 {stat.label}
               </p>
             </div>

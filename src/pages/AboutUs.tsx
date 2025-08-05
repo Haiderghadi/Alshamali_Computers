@@ -1,84 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import Container from "../components/reusables/Container";
-import Heading from "../components/reusables/Heading";
-import {
-  FaUsers,
-  FaAward,
-  FaHandshake,
-  FaLightbulb,
-  FaChartLine,
-  FaGlobe,
-} from "react-icons/fa";
+import { FaUsers, FaAward, FaChartLine, FaGlobe } from "react-icons/fa";
 import AnimatedNumber from "../components/reusables/AnimatedNumber";
-
-const values = [
-  {
-    icon: <FaHandshake className="text-4xl text-blue-600" />,
-    title: "Trust & Reliability",
-    description:
-      "Building lasting relationships through honest, transparent, and reliable service delivery.",
-  },
-  {
-    icon: <FaLightbulb className="text-4xl text-green-600" />,
-    title: "Innovation",
-    description:
-      "Embracing cutting-edge technology to provide forward-thinking solutions for our clients.",
-  },
-  {
-    icon: <FaUsers className="text-4xl text-purple-600" />,
-    title: "Customer Focus",
-    description:
-      "Putting our customers first with personalized solutions and exceptional support.",
-  },
-  {
-    icon: <FaAward className="text-4xl text-orange-600" />,
-    title: "Excellence",
-    description:
-      "Maintaining the highest standards of quality in every product and service we offer.",
-  },
-];
-
-const team = [
-  {
-    name: "Ahmed Al Shamali",
-    position: "Founder & CEO",
-    image: "/shamali_logo.png",
-    description:
-      "Leading the company with over 15 years of experience in IT solutions and business development.",
-  },
-  {
-    name: "Sarah Johnson",
-    position: "Technical Director",
-    image: "/image1.webp",
-    description:
-      "Expert in enterprise solutions with a passion for innovative technology implementation.",
-  },
-  {
-    name: "Mohammed Hassan",
-    position: "Sales Manager",
-    image: "/image2.jpg",
-    description:
-      "Dedicated to building strong client relationships and delivering exceptional customer service.",
-  },
-  {
-    name: "Lisa Chen",
-    position: "Support Team Lead",
-    image: "/image3.webp",
-    description:
-      "Ensuring our clients receive the best technical support and maintenance services.",
-  },
-];
-
-const stats = [
-  { number: 1500, suffix: "+", label: "Happy Clients" },
-  { number: 900, suffix: "+", label: "Projects Completed" },
-  { number: 10, suffix: "+", label: "Team Members" },
-  { number: 10, suffix: "+", label: "Years Experience" },
-];
+import { stats, team, values } from "../constants/aboutus";
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const handleDownloadProfile = () => {
+    // Create a temporary link element to trigger download
+    const link = document.createElement("a");
+    link.href = "/al_shamali_computers_profile.pdf";
+    link.download = "Shamali-Company-Profile.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -101,48 +39,62 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="bg-neutral-200 min-h-screen pt-2 lg:pt-10">
+    <div className="bg-background min-h-screen pt-2 lg:pt-10">
       <Container>
-        <Heading
-          title="About Shamali"
-          description="We are a leading IT solutions provider, dedicated to empowering businesses with cutting-edge technology and exceptional service."
-        />
+        <div className="relative flex flex-row justify-between items-start">
+          {/* Heading */}
+          <div className="text-left mb-8">
+            <h1 className="text-4xl font-bold text-heading mb-4">
+              About Shamali
+            </h1>
+            <p className="text-description text-lg">
+              We are a leading IT solutions provider, dedicated to empowering
+              businesses with cutting-edge technology and exceptional service.
+            </p>
+          </div>
+
+          {/* Download Profile Button */}
+          <button
+            onClick={handleDownloadProfile}
+            className="bg-red-500 text-white px-4 py-2 rounded-sm w-56 shadow-[var(--shadow-custom-card)] "
+          >
+            <span>Download Profile</span>
+          </button>
+        </div>
 
         {/* Company Story */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <h2 className="text-3xl font-bold text-heading mb-6">Our Story</h2>
+            <p className="text-lightDescription mb-4 leading-relaxed">
               Founded in 2014, Shamali has grown from a small local IT shop to a
               comprehensive technology solutions provider. Our journey began
               with a simple mission: to make technology accessible and
               beneficial for businesses of all sizes.
             </p>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-lightDescription mb-4 leading-relaxed">
               Over the years, we've expanded our services to include hardware
               solutions, software services, cybersecurity, and digital
               transformation consulting. Our commitment to quality and customer
               satisfaction has remained at the core of everything we do.
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-lightDescription leading-relaxed">
               Today, we're proud to serve hundreds of businesses across the
               region, helping them leverage technology to achieve their goals
               and drive growth.
             </p>
           </div>
-          <div className="bg-white rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+          <div className="bg-white rounded-xl shadow-[var(--shadow-custom-card)] p-8">
+            <h3 className="text-2xl font-bold text-heading mb-6">
               Our Mission
             </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-lightDescription mb-6 leading-relaxed">
               To empower businesses with innovative technology solutions that
               drive growth, enhance efficiency, and create competitive
               advantages in the digital age.
             </p>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Our Vision
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="text-2xl font-bold text-heading mb-6">Our Vision</h3>
+            <p className="text-lightDescription leading-relaxed">
               To be the trusted technology partner of choice for businesses
               seeking reliable, innovative, and cost-effective IT solutions that
               enable their success.
@@ -158,39 +110,39 @@ const AboutUs = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-6 text-center"
+              className="bg-white rounded-xl shadow-[var(--shadow-custom-card)] p-6 text-center"
             >
-              <div className="text-3xl font-bold text-gray-900 mb-2">
+              <div className="text-3xl font-bold text-heading mb-2">
                 <AnimatedNumber
                   target={stat.number}
                   suffix={stat.suffix}
                   shouldStart={isVisible}
-                  className="text-3xl font-bold text-gray-900"
+                  className="text-3xl font-bold text-heading"
                 />
               </div>
-              <div className="text-gray-600">{stat.label}</div>
+              <div className="text-lightDescription">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Values */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-heading mb-12 text-center">
             Our Values
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-6 text-center hover:-translate-y-1 transition-all duration-300"
+                className="bg-white rounded-xl shadow-[var(--shadow-custom-card)] p-6 text-center hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex items-center justify-center w-16 h-16 bg-gray-100 rounded-lg mx-auto mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-xl font-bold text-heading mb-4">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-lightDescription leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -200,14 +152,14 @@ const AboutUs = () => {
 
         {/* Team */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-heading mb-12 text-center">
             Meet Our Team
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-6 text-center hover:-translate-y-1 transition-all duration-300"
+                className="bg-white rounded-xl shadow-[var(--shadow-custom-card)] p-6 text-center hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
                   <img
@@ -216,13 +168,13 @@ const AboutUs = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-heading mb-1">
                   {member.name}
                 </h3>
-                <p className="text-blue-600 font-semibold mb-3">
+                <p className="text-lightDescription text-sm mb-2">
                   {member.position}
                 </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-description text-sm leading-relaxed">
                   {member.description}
                 </p>
               </div>
@@ -231,8 +183,8 @@ const AboutUs = () => {
         </div>
 
         {/* Why Choose Us */}
-        <div className="bg-white rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+        <div className="bg-white rounded-xl shadow-[var(--shadow-custom-card)] p-12">
+          <h2 className="text-3xl font-bold text-heading mb-8 text-center">
             Why Choose Shamali?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -241,10 +193,10 @@ const AboutUs = () => {
                 <FaChartLine className="text-blue-600 text-xl" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-heading mb-2">
                   Proven Track Record
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-lightDescription">
                   Over a decade of successful projects and satisfied clients
                   across various industries.
                 </p>
@@ -255,10 +207,10 @@ const AboutUs = () => {
                 <FaGlobe className="text-green-600 text-xl" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-heading mb-2">
                   Global Partnerships
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-lightDescription">
                   Strategic partnerships with leading technology brands to
                   provide the best solutions.
                 </p>
@@ -269,10 +221,10 @@ const AboutUs = () => {
                 <FaUsers className="text-purple-600 text-xl" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-heading mb-2">
                   Expert Team
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-lightDescription">
                   Certified professionals with deep expertise in various
                   technology domains.
                 </p>
@@ -283,10 +235,10 @@ const AboutUs = () => {
                 <FaAward className="text-orange-600 text-xl" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-heading mb-2">
                   Quality Assurance
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-lightDescription">
                   Rigorous quality control processes to ensure reliable and
                   durable solutions.
                 </p>

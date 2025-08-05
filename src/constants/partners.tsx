@@ -1,0 +1,66 @@
+export const partners = [
+  {
+    name: "Microsoft",
+    logo: "/windows.png",
+    category: "Software",
+    description: "Leading software solutions and cloud services provider.",
+    partnership: "Gold Partner",
+  },
+  {
+    name: "Apple",
+    logo: "/apple.jpg",
+    category: "Hardware",
+    description: "Premium computing devices and ecosystem solutions.",
+    partnership: "Authorized Reseller",
+  },
+  {
+    name: "Dell",
+    logo: "/dell.png",
+    category: "Hardware",
+    description: "Enterprise computing solutions and professional services.",
+    partnership: "Platinum Partner",
+  },
+  {
+    name: "HP",
+    logo: "/hp.png",
+    category: "Hardware",
+    description:
+      "Innovative technology solutions for businesses and consumers.",
+    partnership: "Gold Partner",
+  },
+  {
+    name: "Lenovo",
+    logo: "/lenovo.png",
+    category: "Hardware",
+    description: "Global technology leader in PCs and smart devices.",
+    partnership: "Authorized Reseller",
+  },
+  {
+    name: "Acer",
+    logo: "/acer.png",
+    category: "Hardware",
+    description: "Affordable computing solutions for every need.",
+    partnership: "Silver Partner",
+  },
+  {
+    name: "Samsung",
+    logo: "/samsung.png",
+    category: "Electronics",
+    description: "Innovative technology and smart device solutions.",
+    partnership: "Authorized Reseller",
+  },
+  {
+    name: "Fortinet",
+    logo: "/fortinet.png",
+    category: "Security",
+    description: "Advanced cybersecurity solutions and network security.",
+    partnership: "Gold Partner",
+  },
+  {
+    name: "Kaspersky",
+    logo: "/kaspersky.png",
+    category: "Security",
+    description: "Comprehensive cybersecurity and antivirus solutions.",
+    partnership: "Silver Partner",
+  },
+];

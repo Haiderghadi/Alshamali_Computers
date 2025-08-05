@@ -1,3 +1,4 @@
+import { testimonialCards } from "../../constants";
 import { cn } from "../../lib/utils";
 import { CardStack } from "../reusables/CardStack";
 
@@ -5,7 +6,7 @@ export function Testimonials() {
   return (
     <div className="flex flex-col md:flex-row lg:flex-row justify-cneter items-center mt-4 sm:mt-6 px-4 sm:px-6 lg:px-8">
       <div className="w-full flex justify-center items-center max-w-4xl order-2 lg:order-2">
-        <CardStack items={CARDS} />
+        <CardStack items={testimonialCards} />
       </div>
       <div className="order-1 lg:order-1 flex flex-col lg:flex-row items-center justify-between gap-4 mt-6 sm:mt-8 mb-4 w-full max-w-4xl">
         <img
@@ -42,46 +43,5 @@ export const Highlight = ({
     </span>
   );
 };
-
-const CARDS = [
-  {
-    id: 0,
-    name: "Mohammad Al-Kandari",
-    designation: "IT Director, Kuwait Oil Company",
-    content: (
-      <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
-        Al Shamali has been our tech partner for over a decade. Their{" "}
-        <Highlight>hardware reliability</Highlight> and{" "}
-        <Highlight>response time</Highlight> make them our first choice for all
-        infrastructure upgrades.
-      </p>
-    ),
-  },
-  {
-    id: 1,
-    name: "Fatima Hussain",
-    designation: "Procurement Lead, National Bank of Kuwait",
-    content: (
-      <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
-        Whether it's laptops, networking, or cloud services,{" "}
-        <Highlight>Al Shamali always delivers</Highlight> with professionalism
-        and precision. <Highlight>Highly recommended</Highlight> for corporate
-        IT needs.
-      </p>
-    ),
-  },
-  {
-    id: 2,
-    name: "Ahmed Al-Rashid",
-    designation: "CTO, Gulf Telecom",
-    content: (
-      <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
-        Their end-to-end service — from product sourcing to annual maintenance —
-        is <Highlight>exceptionally dependable</Highlight>.{" "}
-        <Highlight>We trust them</Highlight> with our entire IT backbone.
-      </p>
-    ),
-  },
-];
 
 export default Testimonials;

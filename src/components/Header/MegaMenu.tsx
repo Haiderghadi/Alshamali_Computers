@@ -195,7 +195,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
             <div className="grid grid-cols-12 min-h-[400px]">
               {/* Categories Column */}
               <div className="col-span-4 bg-gray-50 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <h3 className="text-lg font-semibold text-heading mb-4">
                   Categories
                 </h3>
                 <div className="space-y-2 max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
@@ -215,7 +215,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                         alt={category.name}
                         className="w-8 h-8 rounded object-cover"
                       />
-                      <span className="text-sm font-medium text-gray-700">
+                      <span className="text-sm font-medium text-description">
                         {category.name}
                       </span>
                     </div>
@@ -236,7 +236,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                       className="space-y-4"
                     >
                       <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-semibold text-gray-900">
+                        <h3 className="text-xl font-semibold text-heading">
                           {
                             categories.find((c) => c.id === hoveredCategory)
                               ?.name
@@ -266,7 +266,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                                   className="w-12 h-12 rounded object-cover"
                                 />
                                 <div className="flex-1 min-w-0">
-                                  <h4 className="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">
+                                  <h4 className="text-sm font-medium text-heading group-hover:text-blue-600 truncate">
                                     {product.name}
                                   </h4>
                                   <p className="text-xs text-gray-500 truncate">
@@ -303,7 +303,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                             />
                           </svg>
                         </div>
-                        <h3 className="text-lg font-medium text-gray-900 mb-2">
+                        <h3 className="text-lg font-medium text-heading mb-2">
                           Browse Categories
                         </h3>
                         <p className="text-sm text-gray-500">

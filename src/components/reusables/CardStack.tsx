@@ -39,12 +39,12 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative  h-60 w-60 md:h-60 md:w-96">
+    <div className="relative  h-70 w-70 md:h-60 md:w-[400px]">
       {cards.map((card, index) => {
         return (
           <motion.div
             key={card.id}
-            className="absolute bg-white h-60 w-60 md:h-72 md:w-[500px] rounded-3xl p-4 shadow-xl border border-neutral-200 dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between"
+            className="absolute bg-white h-60 w-70 md:h-60 md:w-[400px] rounded-3xl p-4 shadow-xl border border-neutral-200 dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between"
             style={{
               transformOrigin: "top center",
             }}
@@ -59,7 +59,9 @@ export const CardStack = ({
             </div>
             <div>
               <p className="text-neutral-500 font-medium">{card.name}</p>
-              <p className="text-neutral-400 font-normal">{card.designation}</p>
+              <p className="text-neutral-400 text-xs font-normal">
+                {card.designation}
+              </p>
             </div>
           </motion.div>
         );

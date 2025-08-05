@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 
 const App = () => {
   return (
-    <div className="bg-neutral-200">
+    <div className="bg-background">
       <Header />
       <BrowserRouter>
         <Routes>

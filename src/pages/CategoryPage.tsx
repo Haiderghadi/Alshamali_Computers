@@ -8,10 +8,10 @@ const CategoryPage = () => {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        <h2 className="text-2xl font-bold text-heading mb-4">
           Category: {category}
         </h2>
-        <p className="text-gray-600 mb-6">
+        <p className="text-lightDescription mb-6">
           This is a placeholder for the category page. In a real application,
           this would show detailed category information.
         </p>

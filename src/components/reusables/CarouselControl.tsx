@@ -23,9 +23,9 @@ const CarouselControl: React.FC<CarouselControlProps> = ({
       disabled={disabled}
     >
       {type === "previous" ? (
-        <FaArrowLeftLong className="text-gray-600 w-6 h-6" />
+        <FaArrowLeftLong className="text-lightDescription w-6 h-6" />
       ) : (
-        <FaArrowRightLong className="text-gray-600 w-6 h-6" />
+        <FaArrowRightLong className="text-lightDescription w-6 h-6" />
       )}
     </button>
   );

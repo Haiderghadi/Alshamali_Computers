@@ -12,31 +12,9 @@ import {
 import Icons from "./Icons";
 import CustomNavItems from "./CustomNavItems";
 import MobileMegaMenu from "./MobileMegaMenu";
+import { navItems } from "../../constants";
 
 export function Header() {
-  const navItems = [
-    {
-      name: "Shop",
-      link: "",
-    },
-    {
-      name: "Services",
-      link: "/services",
-    },
-    {
-      name: "Partners",
-      link: "/partners",
-    },
-    {
-      name: "About Us",
-      link: "/about",
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-    },
-  ];
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileShopMenuOpen, setIsMobileShopMenuOpen] = useState(false);
 
