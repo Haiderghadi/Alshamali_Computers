@@ -30,22 +30,22 @@ export const slideData = [
   {
     title: "Dell",
     button: "Shop Now",
-    src: "./dellcpu.jpeg",
+    src: "./laptop.avif",
   },
   {
     title: "macbook pro",
     button: "Shop Now",
-    src: "./macbook.jpg",
+    src: "./laptop.avif",
   },
   {
     title: "macbook air",
     button: "Learn More",
-    src: "./macbookair.webp",
+    src: "./laptop.avif",
   },
   {
     title: "Dell XPS",
     button: "Discover",
-    src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "./laptop.avif",
   },
 ];
 export const words = ["Business", "Office", "Project", "Workspace"];
@@ -78,13 +78,12 @@ export const featuredCategories = [
   {
     id: 1,
     name: "Laptops",
-    image: "./macbook.jpg",
+    image: "./laptop.avif",
   },
   {
     id: 2,
     name: "Gaming Laptops",
-    image:
-      "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&h=300&fit=crop",
+    image: "./laptop2.avif",
   },
   {
     id: 3,
@@ -94,62 +93,52 @@ export const featuredCategories = [
   {
     id: 4,
     name: "All-in-One Desktops",
-    image:
-      "https://images.unsplash.com/photo-1580894746908-bd0d63a2c74e?w=400&h=300&fit=crop",
+    image: "./laptop2.avif",
   },
   {
     id: 5,
     name: "Monitors",
-    image:
-      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=300&fit=crop",
+    image: "./laptop.avif",
   },
   {
     id: 6,
     name: "Graphic Cards",
-    image:
-      "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop",
+    image: "./laptop2.avif",
   },
   {
     id: 7,
     name: "Servers",
-    image:
-      "https://images.unsplash.com/photo-1610440042657-658c4f4ce14b?w=400&h=300&fit=crop",
+    image: "./laptop.avif",
   },
   {
     id: 8,
     name: "Server Accessories",
-    image:
-      "https://images.unsplash.com/photo-1614064641938-58b4e519bd5f?w=400&h=300&fit=crop",
+    image: "./laptop2.avif",
   },
   {
     id: 9,
     name: "Printers & Scanners",
-    image:
-      "https://images.unsplash.com/photo-1589820296154-d593fed111f1?w=400&h=300&fit=crop",
+    image: "./laptop.avif",
   },
   {
     id: 10,
     name: "Networking & Security",
-    image:
-      "https://images.unsplash.com/photo-1590642912659-6fc41c94bb5e?w=400&h=300&fit=crop",
+    image: "./laptop2.avif",
   },
   {
     id: 11,
     name: "Software",
-    image:
-      "https://images.unsplash.com/photo-1581092580502-5c1f30c8b043?w=400&h=300&fit=crop",
+    image: "./laptop.avif",
   },
   {
     id: 12,
     name: "Apple Products",
-    image:
-      "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop",
+    image: "./laptop2.avif",
   },
   {
     id: 13,
     name: "Accessories",
-    image:
-      "https://images.unsplash.com/photo-1512499617640-c2f999098c80?w=400&h=300&fit=crop",
+    image: "./laptop.avif",
   },
 ];
 
@@ -159,79 +148,71 @@ export const featuredProducts = [
     id: 1,
     name: "Gaming Laptop",
     price: "$1,299",
-    image:
-      "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&h=300&fit=crop",
+    image: "./laptop.avif",
   },
   {
     id: 2,
     name: "Mechanical Keyboard",
     price: "$149",
-    image:
-      "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400&h=300&fit=crop",
+    image: "./laptop2.avif",
   },
   {
     id: 3,
     name: "Gaming Mouse",
     price: "$79",
-    image:
-      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=300&fit=crop",
+    image: "./laptop.avif",
   },
   {
     id: 4,
     name: "4K Monitor",
     price: "$599",
-    image:
-      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=300&fit=crop",
+    image: "./laptop2.avif",
   },
   {
     id: 5,
     name: "Graphics Card",
     price: "$899",
-    image:
-      "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop",
+    image: "./laptop.avif",
   },
   {
     id: 6,
     name: "CPU Processor",
     price: "$449",
-    image:
-      "https://images.unsplash.com/photo-1555617778-02518624e14d?w=400&h=300&fit=crop",
+    image: "./laptop2.avif",
   },
   {
     id: 7,
     name: "RAM Memory",
     price: "$199",
-    image:
-      "https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&h=300&fit=crop",
+    image: "./laptop.avif",
   },
   {
     id: 8,
     name: "SSD Storage",
     price: "$129",
-    image:
-      "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=300&fit=crop",
+    image: "./laptop2.avif",
   },
 ];
 
 //HERO PARTNERS SECTION
 export const logoImages = [
-  "/apple.svg",
-  "/lenovo.png",
-  "/dell.png",
-  "/fortinet.png",
-  "/windows.png",
-  "/samsung.png",
-  "/acer.png",
-  "/hp.png",
-  "/kaspersky.png",
-  "/apple.svg",
-  "/windows.png",
-  "/dell.png",
-  "/fortinet.png",
-  "/samsung.png",
-  "/acer.png",
-  "/hp.png",
-  "/kaspersky.png",
+  "/brandlogo/apple.svg",
+  "/brandlogo/lenovo.png",
+  "/brandlogo/dell.png",
+  "/brandlogo/fortinet.png",
+  "/brandlogo/windows.png",
+  "/brandlogo/samsung.png",
+  "/brandlogo/acer.png",
+  "/brandlogo/hp.png",
+  "/brandlogo/kaspersky.png",
+  "/brandlogo/apple.svg",
+  "/brandlogo/windows.png",
+  "/brandlogo/dell.png",
+  "/brandlogo/fortinet.png",
+  "/brandlogo/samsung.png",
+  "/brandlogo/acer.png",
+  "/brandlogo/hp.png",
+  "/brandlogo/kaspersky.png",
 ];
 export const partnerHeading = "Trusted by Leading";
 export const partnerHighlightedHeading = "Brands";

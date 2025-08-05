@@ -31,28 +31,28 @@ export const team = [
   {
     name: "Ahmed Al Shamali",
     position: "Founder & CEO",
-    image: "/shamali_logo.png",
+    image: "/people/man1.jpg",
     description:
       "Leading the company with over 15 years of experience in IT solutions and business development.",
   },
   {
     name: "Sarah Johnson",
     position: "Technical Director",
-    image: "/image1.webp",
+    image: "/people/woman3.jpg",
     description:
       "Expert in enterprise solutions with a passion for innovative technology implementation.",
   },
   {
     name: "Mohammed Hassan",
     position: "Sales Manager",
-    image: "/image2.jpg",
+    image: "/people/man3.jpg",
     description:
       "Dedicated to building strong client relationships and delivering exceptional customer service.",
   },
   {
     name: "Lisa Chen",
     position: "Support Team Lead",
-    image: "/image3.webp",
+    image: "/people/woman4.jpg",
     description:
       "Ensuring our clients receive the best technical support and maintenance services.",
   },
