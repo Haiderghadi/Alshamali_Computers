@@ -3,8 +3,12 @@ import { Highlight } from "../components/AboutUs/Testimonials";
 //HEADER
 export const navItems = [
   {
-    name: "Shop",
+    name: "Home",
     link: "/",
+  },
+  {
+    name: "Shop",
+    link: "",
   },
   {
     name: "Services",

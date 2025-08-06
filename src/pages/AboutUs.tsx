@@ -39,11 +39,11 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="bg-background min-h-screen pt-2 lg:pt-10">
+    <div className="bg-background min-h-screen pt-2 lg:pt-5">
       <Container>
-        <div className="relative flex flex-row justify-between items-start">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
           {/* Heading */}
-          <div className="text-left mb-8">
+          <div className="text-left md:max-w-2xl mb-6 md:mb-0">
             <h1 className="text-4xl font-bold text-heading mb-4">
               About Shamali
             </h1>
@@ -56,7 +56,7 @@ const AboutUs = () => {
           {/* Download Profile Button */}
           <button
             onClick={handleDownloadProfile}
-            className="bg-red-500 text-white px-4 py-2 rounded-sm w-56 shadow-[var(--shadow-custom-card)] "
+            className="bg-red-500 text-white px-4 py-2 rounded-sm w-56 shadow-[var(--shadow-custom-card)]"
           >
             <span>Download Profile</span>
           </button>

@@ -79,7 +79,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="bg-background min-h-screen pt-2 lg:pt-10">
+    <div className="bg-background min-h-screen pt-2 lg:pt-5">
       <Container>
         <Heading
           title="Contact"
