@@ -1,6 +1,7 @@
 import { useState, useEffect, useId, useRef, useCallback } from "react";
 import CarouselControl from "./CarouselControl";
 import Heading from "./Heading";
+import { useNavigate } from "react-router-dom";
 
 interface Product {
   id: number;
@@ -20,11 +21,17 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
   catergoryGrid = false,
   productGrid = false,
 }) => {
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [dragOffset, setDragOffset] = useState(0);
+
+  const handleProductClick = (id: number, path: string) => {
+    navigate(`/shop/${path}/${id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -281,14 +288,24 @@ const SimpleGrid: React.FC<SimpleGridProps> = ({
 
                     {/* Product Info */}
                     {catergoryGrid ? (
-                      <div className="py-3 sm:py-4 md:py-4">
+                      <div
+                        onClick={() =>
+                          handleProductClick(product.id, "category")
+                        }
+                        className="py-3 sm:py-4 md:py-4"
+                      >
                         <h3 className="text-base sm:text-lg md:text-xl font-semibold text-description mb-2 group-hover:text-heading transition-colors duration-300 line-clamp-2 select-none">
                           {product.name}
                         </h3>
                       </div>
                     ) : null}
                     {productGrid ? (
-                      <div className="py-3 sm:py-4 md:py-2">
+                      <div
+                        onClick={() =>
+                          handleProductClick(product.id, "product")
+                        }
+                        className="py-3 sm:py-4 md:py-2"
+                      >
                         <h3 className="text-base sm:text-sm md:text-md font-normal text-description mb-2 group-hover:text-heading transition-colors duration-300 line-clamp-2 select-none">
                           {product.name}
                         </h3>

@@ -230,11 +230,8 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <a
-      href="/"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
-    >
-      <img src="./shamali_logo.png" alt="logo" width={100} height={100} />
+    <a href="/" className="z-20">
+      <img src="/shamali_logo.png" alt="logo" width={100} height={100} />
     </a>
   );
 };
