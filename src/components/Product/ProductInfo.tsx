@@ -33,13 +33,15 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         <StarRating rating={product.rating} />
       </div>
 
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
+      <h1 className="text-xl sm:text-xl md:text-2xl font-bold text-heading mb-2 line-clamp-2 select-none">
+        {product.name}
+      </h1>
 
-      <p className="text-gray-600 mb-4">{product.description}</p>
+      {/* <p className="text-gray-600 mb-4">{product.description}</p> */}
 
       <div className="flex items-center space-x-4 mb-6">
         <div className="flex items-center space-x-2">
-          <span className="text-3xl font-bold text-gray-900">
+          <span className="text-3xl font-semibold text-heading">
             {product.price}
           </span>
           {product.originalPrice && (

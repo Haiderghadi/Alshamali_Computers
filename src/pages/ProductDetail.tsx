@@ -101,6 +101,10 @@ const ProductDetail = () => {
                 <span>Share</span>
               </button>
             </div>
+            {/* Product Description */}
+            <div className="mt-12">
+              <p className="text-gray-700">{product.description}</p>
+            </div>
           </div>
         </div>
 
